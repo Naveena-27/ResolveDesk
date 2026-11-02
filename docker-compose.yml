@@ -1,0 +1,14 @@
+# Local PostgreSQL for development: `docker compose up -d`
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: resolve
+      POSTGRES_PASSWORD: resolve
+      POSTGRES_DB: resolvedesk
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

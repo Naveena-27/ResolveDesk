@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/*
+  ResolveDesk tokens
+  canvas  #F3F4F7  cool grey page background
+  surface #FFFFFF  panels and rows
+  ink     #1A1F2B  main text
+  muted   #5E6677  secondary text
+  rule    #D9DDE5  borders
+  plum    #6B2FA0  brand / primary actions
+  Priority colours carry meaning everywhere they appear.
+*/
+@theme {
+  --color-canvas: #f3f4f7;
+  --color-surface: #ffffff;
+  --color-ink: #1a1f2b;
+  --color-muted: #5e6677;
+  --color-rule: #d9dde5;
+  --color-plum: #6b2fa0;
+  --color-plum-dark: #55237f;
+  --color-plum-soft: #f1e9f8;
+
+  --color-urgent: #c0262d;
+  --color-high: #d9730d;
+  --color-medium: #2e6db4;
+  --color-low: #8a93a3;
+
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-plum);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
