@@ -1,4 +1,3 @@
-
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -31,10 +30,10 @@ import { AuthModule } from './auth/auth.module.js';
         // Development only: use migrations before production.
         synchronize: config.get('DB_SYNC', 'true') === 'true',
         ssl:
-          config.get('DB_SSL') === 'true'
-            ? { rejectUnauthorized: false }
-            : false,
-      }),
+        config.get('DB_SSL') === 'true'
+          ? { rejectUnauthorized: true }
+          : false,
+            }),
     }),
 
     AiModule,
